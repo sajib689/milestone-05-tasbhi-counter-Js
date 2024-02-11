@@ -27,7 +27,7 @@
         <div class="card w-96">
             <div class="card-body items-center text-center">
               <h2  class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">Alhamdulilah  </h2>
-              <p id="subhanAllahDisplay" class="block text-4xl font-sans font-light leading-relaxed text-inherit antialiased">0</p>
+              <p id="alhamdulillahDisplay" class="block text-4xl font-sans font-light leading-relaxed text-inherit antialiased">0</p>
               <div class="card-actions justify-end">
                 <button id="alhamdulillahIncrimentBtn" class="select-none rounded-lg bg-green-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Incriment</button>
                 <button id="alhamdulillahDecrimentBtn" class="select-none rounded-lg bg-red-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Decriment</button>
@@ -38,7 +38,7 @@
         <div class="card w-96">
             <div class="card-body items-center text-center">
               <h2  class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">Allahuakber</h2>
-              <p id="subhanAllahDisplay" class="block text-4xl font-sans font-light leading-relaxed text-inherit antialiased">0</p>
+              <p id="allahAkberDisplay" class="block text-4xl font-sans font-light leading-relaxed text-inherit antialiased">0</p>
               <div class="card-actions justify-end">
                 <button id="allahAkberIncrimentBtn" class="select-none rounded-lg bg-green-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Incriment</button>
                 <button id="allahAkberDecrimentBtn" class="select-none rounded-lg bg-red-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Decriment</button>
@@ -52,8 +52,11 @@
     </div>
     </section>
     <script>
-        // get the all id from the element
+        
         const subhanAllahDisplay = document.getElementById('subhanAllahDisplay')
+        const alhamdulillahDisplay = document.getElementById('alhamdulillahDisplay')
+        const allahAkberDisplay = document.getElementById('allahAkberDisplay')
+        // get the all id from the element
         const subhanAllahIncrimentBtn = document.getElementById('subhanAllahIncrimentBtn')
         const subhanAllahDecrimentBtn = document.getElementById('subhanAllahDecrimentBtn')
         const alhamdulillahIncrimentBtn = document.getElementById('alhamdulillahIncrimentBtn')
@@ -92,33 +95,39 @@
                 return alert("It's completely end now start another one")
             }
             alhamdulillahIntialValue += 1
-            subhanAllahDisplay.innerText = alhamdulillahIntialValue
+            alhamdulillahDisplay.innerText = alhamdulillahIntialValue
         })
-        alhamdulillahIncrimentBtn.addEventListener('click', function() {
+        alhamdulillahDecrimentBtn.addEventListener('click', function() {
             if(alhamdulillahIntialValue === 0) {
                 return alert('You cannot added negative value')
             }
             alhamdulillahIntialValue -= 1
-            alhamdulillahIntialValue.innerText = alhamdulillahIntialValue
+            alhamdulillahDisplay.innerText = alhamdulillahIntialValue
         })
-       
+       // reset the value
+       resetBtn.addEventListener('click', function(){
+        alhamdulillahDisplay.innerText = 0
+        })
         // End the first eventlistener work
         // addEventListener add 3
-        allahAkberIntialValue.addEventListener('click', function() {
+        allahAkberIncrimentBtn.addEventListener('click', function() {
             if(allahAkberIntialValue === 33) {
                 return alert("It's completely end now start another one")
             }
             allahAkberIntialValue += 1
-            subhanAllahDisplay.innerText = allahAkberIntialValue
+            allahAkberDisplay.innerText = allahAkberIntialValue
         })
-        allahAkberIntialValue.addEventListener('click', function() {
+        allahAkberDecrimentBtn.addEventListener('click', function() {
             if(allahAkberIntialValue === 0) {
                 return alert('You cannot added negative value')
             }
             allahAkberIntialValue -= 1
-            allahAkberIntialValue.innerText = allahAkberIntialValue
+            allahAkberDisplay.innerText = allahAkberIntialValue
         })
-       
+       // reset the value
+       resetBtn.addEventListener('click', function(){
+        allahAkberDisplay.innerText = 0
+        })
         // End the first eventlistener work
 
     </script>
